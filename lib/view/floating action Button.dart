@@ -16,7 +16,7 @@ class _FloatingActionButtonScreenState extends State<FloatingActionButtonScreen>
     return  Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          throw InternetException("hAMZA");
+          throw ServerException("LAAAKA , Server Error");
         },
         child: Icon(Icons.add),
 

@@ -6,14 +6,14 @@ class AppExceptions implements Exception{
 
 
   final message;
-  final prefix;
+  //final prefix;
 
-  AppExceptions( this.message ,  this.prefix);
+  AppExceptions( this.message );
 
   @override
   String toString() {
 
-    return "$message , $prefix";
+    return "$message , ";
   }
 
 }
@@ -22,7 +22,7 @@ class AppExceptions implements Exception{
 class InternetException extends AppExceptions{
 
 
-InternetException(String? message): super(message! , "No Internet Available ...");
+InternetException(String? message): super(message!);
 
 }
 
@@ -30,7 +30,7 @@ class RequestTimeOutException extends AppExceptions{
 
 
 
-  RequestTimeOutException(String? message) : super ( message! ,"Request Time Out ...");
+  RequestTimeOutException(String? message) : super ( message! );
 
 }
 
@@ -38,7 +38,14 @@ class RequestTimeOutException extends AppExceptions{
 
 class ServerException extends AppExceptions{
 
-  ServerException([String? message]): super(message! , "Inetrnal Server Error ... ");
+  ServerException([String? message]): super(message! );
 
+
+}
+
+
+class CustomException extends AppExceptions{
+
+  CustomException(String? messgage) : super(messgage!);
 
 }
