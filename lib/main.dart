@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:getx_mvvm_hj/res/Routes/routes%20name.dart';
+import 'package:getx_mvvm_hj/res/Routes/routes.dart';
 import 'package:getx_mvvm_hj/view/SplashScreen.dart';
 
 
@@ -16,8 +19,9 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       home: SplashScreen(),
+      getPages: Routes.appRoutes(),
     );
   }
 }

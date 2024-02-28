@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getx_mvvm_hj/data/app_exceptions.dart';
+import 'package:getx_mvvm_hj/utils/utils.dart';
 
 
 
@@ -16,7 +17,9 @@ class _FloatingActionButtonScreenState extends State<FloatingActionButtonScreen>
     return  Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          throw ServerException("LAAAKA , Server Error");
+
+          Utils.toastMessage('Hey There', Colors.green);
+          Utils.snackBar("This is Hamza", "Booyah", Colors.blue);
         },
         child: Icon(Icons.add),
 
