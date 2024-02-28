@@ -31,6 +31,7 @@ class _FloatingActionButtonScreenState extends State<FloatingActionButtonScreen>
       floatingActionButton: FloatingActionButton(
         onPressed: (){
 
+          print(nameController.value);
           Utils.toastMessage('Hey There', Colors.green);
           Utils.snackBar(nameController.text, "Booyah", Colors.blue);
         },
@@ -40,7 +41,7 @@ class _FloatingActionButtonScreenState extends State<FloatingActionButtonScreen>
       body: SafeArea(
         child: Column(
           children: [
-            ReuseableWidget().textField("enter_your_name".tr, nameController)
+            ReuseableWidget().textField("enter_your_name".tr,nameController)
           ],
         ),
       ),

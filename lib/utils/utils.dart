@@ -57,11 +57,3 @@ class Utils{
 }
 
 
-
-class ControllersInApp{
-
-
-  TextEditingController nameController  = TextEditingController();
-
-
-}
