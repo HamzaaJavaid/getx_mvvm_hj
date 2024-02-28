@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:getx_mvvm_hj/res/Routes/routes%20name.dart';
 import 'package:getx_mvvm_hj/res/Routes/routes.dart';
+import 'package:getx_mvvm_hj/res/languages/localization.dart';
 import 'package:getx_mvvm_hj/view/SplashScreen.dart';
 
 
@@ -22,6 +23,8 @@ class _MyAppState extends State<MyApp> {
     return GetMaterialApp(
       home: SplashScreen(),
       getPages: Routes.appRoutes(),
+      translations: languages(),
+      locale: Locale('en' , "US"),
     );
   }
 }
