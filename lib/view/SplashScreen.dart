@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:get/route_manager.dart';
 import 'package:getx_mvvm_hj/res/Routes/routes%20name.dart';
 import 'package:getx_mvvm_hj/view/floating%20action%20Button.dart';
@@ -19,9 +22,12 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
-    splashServices.isLogin();
+
     // TODO: implement initState
     super.initState();
+    Future.delayed(Duration(seconds: 2) , (){
+      Get.toNamed(RouteName.loginView);
+    });
   }
 
 

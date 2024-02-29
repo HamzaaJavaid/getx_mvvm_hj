@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_mvvm_hj/res/Routes/routes%20name.dart';
 import 'package:getx_mvvm_hj/utils/reusable%20Widgets.dart';
+import 'package:getx_mvvm_hj/view/SplashScreen.dart';
 import 'package:getx_mvvm_hj/view/login%20view/loginview_controller.dart';
+import 'package:getx_mvvm_hj/view_model/services/splash_services/splash%20services.dart';
 import 'package:hive/hive.dart';
 import '../../utils/utils.dart';
 
@@ -19,7 +22,16 @@ class _loginViewState extends State<loginView> {
 
 
   loginView_Controller loginController = Get.put(loginView_Controller());
+  SplashServices splashServices = SplashServices();
 
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    splashServices.isLogin();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +54,7 @@ class _loginViewState extends State<loginView> {
             box.put("email", loginController.emailController.value.text.toString());
             box.put("password", loginController.passwordController.value.text.toString());
             print('done');
+            Get.toNamed(RouteName.loginSuccess);
 
           }),
           ],
