@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:getx_mvvm_hj/data/app_exceptions.dart';
 import 'package:getx_mvvm_hj/utils/reusable%20Widgets.dart';
 import 'package:getx_mvvm_hj/utils/utils.dart';
+import 'package:getx_mvvm_hj/view/SplashScreen.dart';
+import 'package:getx_mvvm_hj/view_model/services/splash_services/splash%20services.dart';
 
 
 
@@ -17,6 +19,17 @@ class _FloatingActionButtonScreenState extends State<FloatingActionButtonScreen>
 
 
   TextEditingController nameController = TextEditingController();
+  SplashServices splashServices = SplashServices();
+
+
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    splashServices.isLogin();
+  }
 
   @override
   Widget build(BuildContext context) {

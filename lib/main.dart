@@ -4,9 +4,14 @@ import 'package:getx_mvvm_hj/res/Routes/routes%20name.dart';
 import 'package:getx_mvvm_hj/res/Routes/routes.dart';
 import 'package:getx_mvvm_hj/res/languages/localization.dart';
 import 'package:getx_mvvm_hj/view/SplashScreen.dart';
+import 'package:hive/hive.dart';
+import "package:path_provider/path_provider.dart";
 
 
-void main(){
+Future<void> main() async {
+   WidgetsFlutterBinding.ensureInitialized();
+  var directory = await getApplicationCacheDirectory();
+   Hive.init(directory.path);
   runApp(MyApp());
 }
 
